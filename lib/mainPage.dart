@@ -12,13 +12,14 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  int _selectedIndex = 0;
+  int _selectedIndex = 1;
   final List<Widget> _pages = [
-    Builder(builder: (context) => HomePage()),
     const SearchPage(),
+    Builder(builder: (context) => HomePage()),
     const ProfilePage(),
   ];
-  final PageController _pageController = PageController(keepPage: true);
+  final PageController _pageController =
+      PageController(initialPage: 1, keepPage: true);
 
   void _onItemTapped(int index) {
     setState(() {
@@ -53,12 +54,12 @@ class _MainPageState extends State<MainPage> {
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
             icon: Icon(Icons.search),
             label: 'Search',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),

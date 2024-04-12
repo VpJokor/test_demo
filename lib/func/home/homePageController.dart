@@ -37,4 +37,10 @@ class HomePageController extends GetxController {
       print(e);
     }
   }
+
+  void clearAlbumData() {
+    state.album.update((val) {
+      val?.userId = 0;
+    });
+  }
 }

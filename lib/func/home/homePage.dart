@@ -78,6 +78,22 @@ class HomePage extends StatelessWidget {
                 ),
               ),
             ),
+            const SizedBox(
+              height: 30,
+            ),
+            GestureDetector(
+              onTap: controller.clearAlbumData,
+              child: Container(
+                decoration: const BoxDecoration(color: Colors.blue),
+                child: const Padding(
+                  padding: EdgeInsets.all(10),
+                  child: Text(
+                    "clearAlbumData",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                  ),
+                ),
+              ),
+            ),
           ]),
     );
   }

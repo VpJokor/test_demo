@@ -9,5 +9,8 @@ void main() {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
     statusBarColor: Colors.transparent,
   ));
+  // PreferenceUtil().commitInt('key', 1234456);
+  // Future<int> value = PreferenceUtil().getIntValue("key",defaultValue: 4564);
+  // print('value is $value')
   runApp(const MyApp());
 }

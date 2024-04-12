@@ -6,7 +6,7 @@ import 'homePageController.dart';
 import 'homePageState.dart';
 
 class HomePage extends StatelessWidget {
-  final HomePageController logic = Get.put(HomePageController());
+  final HomePageController controller = Get.put(HomePageController());
   final HomePageState state = Get.find<HomePageController>().state;
 
   @override
@@ -37,10 +37,46 @@ class HomePage extends StatelessWidget {
               id: state.id,
               builder: (controller) {
                 return Text(
-                  "Content id is  : ${state.id}",
+                  "Content id is : ${state.id}",
                   style: Theme.of(context).textTheme.headlineMedium,
                 );
               },
+            ),
+            Obx(() => Text(
+                  "Album userId is ${state.album.value.userId ?? "无ID"}",
+                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.w600),
+                )),
+            const SizedBox(
+              height: 30,
+            ),
+            GestureDetector(
+              onTap: controller.onTap,
+              child: Container(
+                decoration: const BoxDecoration(color: Colors.blue),
+                child: const Padding(
+                  padding: EdgeInsets.all(10),
+                  child: Text(
+                    "Change Id",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            GestureDetector(
+              onTap: controller.getAlbumDataFromNet,
+              child: Container(
+                decoration: const BoxDecoration(color: Colors.blue),
+                child: const Padding(
+                  padding: EdgeInsets.all(10),
+                  child: Text(
+                    "getAlbumDataFromNet",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                  ),
+                ),
+              ),
             ),
           ]),
     );

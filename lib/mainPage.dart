@@ -14,11 +14,11 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   int _selectedIndex = 0;
   final List<Widget> _pages = [
-    HomePage(),
+    Builder(builder: (context) => HomePage()),
     const SearchPage(),
     const ProfilePage(),
   ];
-  final PageController _pageController = PageController();
+  final PageController _pageController = PageController(keepPage: true);
 
   void _onItemTapped(int index) {
     setState(() {
@@ -69,28 +69,6 @@ class _MainPageState extends State<MainPage> {
         selectedItemColor: Colors.blue,
         onTap: _onItemTapped,
       ),
-    );
-  }
-}
-
-class Screen2 extends StatelessWidget {
-  const Screen2({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Center(
-      child: Text('Search Screen'),
-    );
-  }
-}
-
-class Screen3 extends StatelessWidget {
-  const Screen3({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Center(
-      child: Text('Profile Screen'),
     );
   }
 }

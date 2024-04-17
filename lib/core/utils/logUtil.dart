@@ -1,3 +1,8 @@
+/**
+ * 日志打印库，方便调试
+ * 如果不需要日志输出 可以设置 isShowLog = false;
+ */
+
 const String DEBUG = "debug";
 const String INFO = "info";
 const String ERROR = "error";

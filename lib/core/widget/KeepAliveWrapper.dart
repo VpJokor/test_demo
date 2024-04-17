@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 /**
  * 实现PageView子页面缓存功能
  * 用KeepAliveWrapper包裹着需要缓存的子页面即可
+ * 参考链接 https://zhuanlan.zhihu.com/p/612669384
  */
 // 使用方法
 // @override

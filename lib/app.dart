@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/get_navigation.dart';
+import 'func/routes.dart';
 import 'mainPage.dart';
 
 class MyApp extends StatelessWidget {
@@ -16,7 +17,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MainPage(title: 'Flutter Demo Home Page'),
+      home: const MainPage(),
+      getPages: Routes.getPages,
     );
   }
 }

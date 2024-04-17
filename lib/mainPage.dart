@@ -6,9 +6,9 @@ import 'package:test_demo/func/search/searchPage.dart';
 import 'core/widget/KeepAliveWrapper.dart';
 
 class MainPage extends StatefulWidget {
-  const MainPage({super.key, required this.title});
-  final String title;
-
+  // const MainPage({super.key, required this.title});
+  const MainPage({super.key});
+  final String title = "主页";
   @override
   State<MainPage> createState() => _MainPageState();
 }

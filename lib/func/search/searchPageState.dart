@@ -1,7 +1,9 @@
 import 'package:flutter_constraintlayout/flutter_constraintlayout.dart';
 import 'package:get/get.dart';
 
-class SearchPageDart {
+class SearchPageState {
+  String tag = "SearchPage";
+
   RxDouble x = 0.0.obs;
   RxDouble y = 0.0.obs;
 

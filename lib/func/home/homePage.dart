@@ -1,16 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:test_demo/core/utils/logUtil.dart';
 
 import 'homePageController.dart';
 import 'homePageState.dart';
 
 class HomePage extends StatelessWidget {
+  HomePage({super.key});
   final HomePageController controller = Get.put(HomePageController());
   final HomePageState state = Get.find<HomePageController>().state;
 
   @override
   Widget build(BuildContext context) {
+    logInfo(tag: state.tag, "HomePage build ");
     return Center(
       child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

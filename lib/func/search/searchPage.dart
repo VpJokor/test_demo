@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_constraintlayout/flutter_constraintlayout.dart';
 import 'package:get/get.dart';
+import 'package:test_demo/core/utils/logUtil.dart';
 
 import 'searchPageController.dart';
 import 'searchPageState.dart';
@@ -8,10 +9,11 @@ import 'searchPageState.dart';
 class SearchPage extends StatelessWidget {
   SearchPage({super.key});
   final SearchPageController controller = Get.put(SearchPageController());
-  final SearchPageDart state = Get.find<SearchPageController>().state;
+  final SearchPageState state = Get.find<SearchPageController>().state;
 
   @override
   Widget build(BuildContext context) {
+    logInfo(tag: state.tag, "SearchPage build");
     return ConstraintLayout(
       childConstraints: [
         Constraint(

@@ -1,16 +1,25 @@
 import 'package:get/get.dart';
+import 'package:test_demo/core/utils/logUtil.dart';
 
 import 'searchPageState.dart';
 
 class SearchPageController extends GetxController {
-  static const String _tag = "SearchPageController";
-  final SearchPageDart state = SearchPageDart();
+  final SearchPageState state = SearchPageState();
 
   SearchPageController();
 
   @override
-  void onInit() {}
+  void onInit() {
+    logInfo(tag: state.tag, "SearchPageController onInit");
+  }
 
   @override
-  void onClose() {}
+  void onReady() {
+    logInfo(tag: state.tag, "SearchPageController onReady");
+  }
+
+  @override
+  void onClose() {
+    logInfo(tag: state.tag, "SearchPageController onClose");
+  }
 }

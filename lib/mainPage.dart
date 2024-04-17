@@ -3,6 +3,8 @@ import 'package:test_demo/func/home/homePage.dart';
 import 'package:test_demo/func/profile/profilePage.dart';
 import 'package:test_demo/func/search/searchPage.dart';
 
+import 'core/widget/KeepAliveWrapper.dart';
+
 class MainPage extends StatefulWidget {
   const MainPage({super.key, required this.title});
   final String title;
@@ -14,9 +16,18 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   int _selectedIndex = 1;
   final List<Widget> _pages = [
-    Builder(builder: (context) => SearchPage()),
-    Builder(builder: (context) => HomePage()),
-    const ProfilePage(),
+    KeepAliveWrapper(
+      keepAlive: true,
+      child: SearchPage(),
+    ),
+    KeepAliveWrapper(
+      keepAlive: true,
+      child: HomePage(),
+    ),
+    KeepAliveWrapper(
+      keepAlive: true,
+      child: ProfilePage(),
+    ),
   ];
   final PageController _pageController =
       PageController(initialPage: 1, keepPage: true);

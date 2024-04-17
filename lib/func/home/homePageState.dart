@@ -4,6 +4,7 @@ import '../../core/bean/Album.dart';
 
 class HomePageState {
   HomePageState();
+  String tag = "HomePage";
 
   String id = "wddsad";
   RxString pageName = "HomePage".obs;

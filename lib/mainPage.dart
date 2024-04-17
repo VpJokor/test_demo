@@ -5,6 +5,7 @@ import 'package:test_demo/func/home/homePage.dart';
 import 'package:test_demo/func/profile/profilePage.dart';
 import 'package:test_demo/func/search/searchPage.dart';
 
+import 'core/utils/toastUtil.dart';
 import 'core/widget/KeepAliveWrapper.dart';
 
 class MainPage extends StatefulWidget {
@@ -68,17 +69,17 @@ class _MainPageState extends State<MainPage> {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios_new),
           onPressed: () {
-            logInfo(tag: "MainPage", "点击了返回按钮");
-            Fluttertoast.showToast(
-                msg: "This is Center Short Toast",
-                toastLength: Toast.LENGTH_SHORT,
-                gravity: ToastGravity.CENTER,
-                timeInSecForIosWeb: 1,
-                backgroundColor: Colors.red,
-                textColor: Colors.white,
-                fontSize: 16.0);
+            ToastUtil.showToast("点击了返回按钮");
           },
         ),
+        leadingWidth: 0.0,
+        actions: [
+          IconButton(
+              onPressed: () {
+                ToastUtil.showToast("点击了添加按钮");
+              },
+              icon: const Icon(Icons.add)),
+        ],
       ),
       drawer: const Drawer(),
       drawerEnableOpenDragGesture: true,

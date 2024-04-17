@@ -47,7 +47,8 @@ class HomePage extends StatelessWidget {
             ),
             Obx(() => Text(
                   "Album userId is ${state.album.value.userId ?? "无ID"}",
-                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.w600),
+                  style: const TextStyle(
+                      fontSize: 30, fontWeight: FontWeight.w600),
                 )),
             const SizedBox(
               height: 30,

@@ -66,13 +66,20 @@ class _MainPageState extends State<MainPage> {
                 bottomLeft: Radius.circular(10),
                 bottomRight: Radius.circular(10))),
         //与drawer只生效一个
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios_new),
-          onPressed: () {
-            ToastUtil.showToast("点击了返回按钮");
-          },
+        leading: Container(
+          decoration: const BoxDecoration(color: Colors.green),
+          child: IconButton(
+            icon: const Icon(
+              Icons.arrow_back_ios,
+            ),
+            onPressed: () {
+              ToastUtil.showToast("点击了返回按钮");
+            },
+          ),
         ),
-        leadingWidth: 0.0,
+        // leadingWidth: IconTheme.of(context).size,
+        // 设置为 false 去掉leading左侧边距
+        automaticallyImplyLeading: false,
         actions: [
           IconButton(
               onPressed: () {

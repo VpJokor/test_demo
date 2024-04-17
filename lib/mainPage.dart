@@ -14,7 +14,7 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   int _selectedIndex = 1;
   final List<Widget> _pages = [
-    const SearchPage(),
+    Builder(builder: (context) => SearchPage()),
     Builder(builder: (context) => HomePage()),
     const ProfilePage(),
   ];

@@ -1,30 +1,32 @@
 import 'package:get/get.dart';
 import 'package:test_demo/core/bean/Album.dart';
 import 'package:test_demo/core/net/http/albumApi.dart';
+import 'package:test_demo/core/utils/logUtil.dart';
 import 'package:test_demo/func/home/homePageState.dart';
 
 class HomePageController extends GetxController {
+  static const String _tag = "HomePageController";
   final HomePageState state = HomePageState();
 
   HomePageController();
 
   @override
   void onInit() {
-    print('HomePageController onInit');
+    logInfo(tag: _tag, 'HomePageController onInit');
   }
 
   @override
   void onClose() {
-    print('HomePageController onClose');
+    logInfo(tag: _tag, 'HomePageController onClose');
   }
 
   @override
   void onReady() {
-    print('HomePageController onReady');
+    logInfo(tag: _tag, 'HomePageController onReady');
   }
 
   void onTap() {
-    print("HomePageController onTap");
+    logInfo(tag: _tag, "HomePageController onTap");
     state.album.update((val) {
       val?.userId = (val.userId ?? 100) + 1;
     });
@@ -34,7 +36,7 @@ class HomePageController extends GetxController {
     try {
       fetchAlbum().then((value) => {state.album.value = value});
     } catch (e) {
-      print(e);
+      logInfo(tag: _tag, "getAlbumDataFromNet error $e");
     }
   }
 

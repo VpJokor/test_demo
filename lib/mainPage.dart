@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:test_demo/core/utils/logUtil.dart';
 import 'package:test_demo/func/home/homePage.dart';
 import 'package:test_demo/func/profile/profilePage.dart';
 import 'package:test_demo/func/search/searchPage.dart';
@@ -56,6 +58,27 @@ class _MainPageState extends State<MainPage> {
             fontSize: 16, fontWeight: FontWeight.w500, color: Colors.black),
         centerTitle: true,
         toolbarHeight: 40,
+        shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+                topLeft: Radius.zero,
+                topRight: Radius.zero,
+                bottomLeft: Radius.circular(10),
+                bottomRight: Radius.circular(10))),
+        //与drawer只生效一个
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios_new),
+          onPressed: () {
+            logInfo(tag: "MainPage", "点击了返回按钮");
+            Fluttertoast.showToast(
+                msg: "This is Center Short Toast",
+                toastLength: Toast.LENGTH_SHORT,
+                gravity: ToastGravity.CENTER,
+                timeInSecForIosWeb: 1,
+                backgroundColor: Colors.red,
+                textColor: Colors.white,
+                fontSize: 16.0);
+          },
+        ),
       ),
       drawer: const Drawer(),
       drawerEnableOpenDragGesture: true,

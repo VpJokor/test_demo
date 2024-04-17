@@ -52,7 +52,13 @@ class _MainPageState extends State<MainPage> {
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
+        titleTextStyle: const TextStyle(
+            fontSize: 16, fontWeight: FontWeight.w500, color: Colors.black),
+        centerTitle: true,
+        toolbarHeight: 40,
       ),
+      drawer: const Drawer(),
+      drawerEnableOpenDragGesture: true,
       body: PageView(
         controller: _pageController,
         children: _pages,
